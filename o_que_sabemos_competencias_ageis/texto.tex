@@ -1,4 +1,102 @@
 \documentclass{abntex2}
 \begin{document}
-\textbf{inicio do documento}
+
+\chapter{Docker: O que é e como funciona}
+
+\section{Introdução}
+O \textit{Docker} é uma plataforma de código aberto que facilita a criação, o envio e a execução de aplicações em ambientes isolados chamados \textbf{containers}. 
+Ele surgiu como uma solução para eliminar problemas de compatibilidade entre ambientes de desenvolvimento, teste e produção, garantindo que uma aplicação funcione de maneira uniforme independentemente de onde for executada.
+
+\section{O que é Docker}
+O Docker utiliza o conceito de \textit{containerização}, que é uma forma de virtualização em nível de sistema operacional. 
+Diferente das máquinas virtuais tradicionais, onde cada instância possui seu próprio sistema operacional completo, os containers compartilham o mesmo kernel do sistema hospedeiro, tornando-os mais leves e rápidos para iniciar.
+
+\subsection{Principais componentes}
+\begin{itemize}
+    \item \textbf{Docker Engine}: Motor responsável por criar e gerenciar containers.
+    \item \textbf{Imagens Docker}: Pacotes imutáveis contendo tudo o que é necessário para rodar uma aplicação — código, bibliotecas e configurações.
+    \item \textbf{Containers}: Instâncias em execução baseadas em imagens.
+    \item \textbf{Docker Hub}: Registro público onde imagens podem ser compartilhadas e baixadas.
+\end{itemize}
+
+\section{Como funciona}
+O funcionamento do Docker pode ser dividido em algumas etapas principais:
+\begin{enumerate}
+    \item \textbf{Criação da imagem}: O desenvolvedor define um \texttt{Dockerfile}, especificando como a imagem deve ser construída.
+    \item \textbf{Construção}: O Docker interpreta o \texttt{Dockerfile} e gera uma imagem.
+    \item \textbf{Execução}: A imagem é utilizada para criar um container.
+    \item \textbf{Isolamento}: O container executa de forma isolada, mas pode se comunicar com outros containers ou com o sistema hospedeiro por meio de redes configuradas.
+\end{enumerate}
+
+\section{Vantagens do uso}
+\begin{itemize}
+    \item Portabilidade entre diferentes ambientes.
+    \item Inicialização rápida em comparação a máquinas virtuais.
+    \item Uso eficiente de recursos.
+    \item Facilidade de escalabilidade e integração com orquestradores como Kubernetes.
+\end{itemize}
+
+\section{Conclusão}
+O Docker revolucionou a maneira como aplicações são desenvolvidas, testadas e distribuídas. 
+Sua abordagem baseada em containers trouxe mais agilidade e confiabilidade para equipes de desenvolvimento, tornando-se uma ferramenta essencial no ecossistema de DevOps e computação em nuvem.
+
+
+
+
+\chapter{Kubernetes: Orquestração de Containers}
+
+\section{Introdução}
+O \textit{Kubernetes}, também conhecido como \textbf{K8s}, é uma plataforma de código aberto desenvolvida inicialmente pelo Google para automatizar a implantação, o escalonamento e o gerenciamento de aplicações em containers. 
+Ele é amplamente utilizado em conjunto com o Docker, embora também suporte outros runtimes de containers.
+
+\section{O que é Kubernetes}
+O Kubernetes atua como um \textit{orquestrador} de containers, garantindo que as aplicações sejam executadas conforme o esperado em um cluster de máquinas. 
+Seu principal objetivo é tornar a execução de sistemas distribuídos mais simples, lidando com tarefas como:
+\begin{itemize}
+    \item Distribuição de containers entre diferentes nós do cluster.
+    \item Recuperação automática de falhas.
+    \item Balanceamento de carga.
+    \item Escalonamento dinâmico.
+\end{itemize}
+
+\section{Componentes principais}
+O Kubernetes é composto por vários elementos que trabalham juntos:
+\subsection{Plano de Controle (\textit{Control Plane})}
+\begin{itemize}
+    \item \textbf{API Server}: Ponto central de comunicação com o cluster.
+    \item \textbf{Scheduler}: Responsável por alocar containers em nós disponíveis.
+    \item \textbf{Controller Manager}: Gerencia processos de controle, como replicação e monitoramento de estados.
+    \item \textbf{etcd}: Armazena o estado e a configuração do cluster.
+\end{itemize}
+
+\subsection{Nós de Trabalho (\textit{Worker Nodes})}
+\begin{itemize}
+    \item \textbf{Kubelet}: Agente que garante que os containers estejam rodando como definido.
+    \item \textbf{Kube-proxy}: Gerencia a comunicação de rede dentro e fora do cluster.
+    \item \textbf{Runtime de Container}: Executa os containers (ex.: Docker, containerd, CRI-O).
+\end{itemize}
+
+\section{Como funciona}
+O fluxo básico de funcionamento do Kubernetes é:
+\begin{enumerate}
+    \item O desenvolvedor define um \texttt{manifesto YAML} descrevendo a aplicação e seus requisitos.
+    \item O manifesto é enviado ao \textbf{API Server}.
+    \item O \textbf{Scheduler} decide em qual nó a aplicação será executada.
+    \item O \textbf{Kubelet} no nó selecionado cria e mantém os containers em execução.
+    \item O \textbf{Kubernetes} monitora continuamente o estado e realiza ajustes automáticos conforme necessário.
+\end{enumerate}
+
+\section{Vantagens do uso}
+\begin{itemize}
+    \item Alta disponibilidade e tolerância a falhas.
+    \item Escalonamento automático de cargas de trabalho.
+    \item Gerenciamento simplificado de aplicações distribuídas.
+    \item Integração com provedores de nuvem e ambientes híbridos.
+\end{itemize}
+
+\section{Conclusão}
+O Kubernetes se tornou o padrão de fato para orquestração de containers, trazendo robustez e flexibilidade para arquiteturas modernas baseadas em microsserviços. 
+Sua ampla adoção e suporte da comunidade o tornam uma ferramenta essencial para empresas que buscam escalabilidade e resiliência em seus sistemas.
+
+
 \end{document}
