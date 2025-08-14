@@ -98,5 +98,58 @@ O fluxo básico de funcionamento do Kubernetes é:
 O Kubernetes se tornou o padrão de fato para orquestração de containers, trazendo robustez e flexibilidade para arquiteturas modernas baseadas em microsserviços. 
 Sua ampla adoção e suporte da comunidade o tornam uma ferramenta essencial para empresas que buscam escalabilidade e resiliência em seus sistemas.
 
+\chapter{Apache Kafka: O que é e como funciona}
+
+\section{Introdução}
+O \textit{Apache Kafka} é uma plataforma de \textit{streaming} desenvolvida pelo LinkedIn que posteriormente foi doada à \textit{Apache Software Foundation}. 
+Ela foi projetada para lidar com a ingestão e o processamento de dados de \textit{streaming} em tempo real com alta taxa de transferência e baixa latência, ou seja, consegue lidar com muitos dados de forma muito rápida, quase sem atrasos. O Kafka é amplamente usado para criar pipelines de dados em tempo real e aplicações que se adaptam aos fluxos de dados. 
+Ele combina mensagens, armazenamento e processamento de fluxo para permitir o armazenamento e a análise de dados.
+
+\section{O que é Apache Kafka}
+O Apache Kafka é uma plataforma de transmissão de dados em tempo real, usada para construir pipelines de dados e sistemas baseados em eventos. Ou seja, ele permite que diferentes aplicações comuniquem-se entre si por meio da troca de mensagens de forma rápida. Na prática, o Kafka funciona como um sistema de mensagens baseado no modelo \textit{publicador-assinante} (\textit{publish-subscribe}). Nesse modelo, aplicações chamadas de \textbf produtores enviam dados (mensagens) para canais chamados de \textbf tópicos, enquanto outras aplicações, conhecidas como \textbf consumidores, se inscrevem nesses tópicos para receber os dados.
+
+\subsection{Principais componentes}
+\begin{itemize}
+    \item \textbf{Producer (Produtor)}: Aplicação responsável por enviar mensagens para um ou mais tópicos no Kafka.
+    \item \textbf{Consumer (Consumidor)}: Aplicação que consome as mensagens de um tópico, processando ou repassando os dados recebidos.
+    \item \textbf{Topic (Tópico)}: Canal lógico de comunicação onde as mensagens são agrupadas. Cada tópico pode conter uma grande quantidade de mensagens organizadas por tempo de chegada.
+    \item \textbf{Broker}: Servidor Kafka responsável por armazenar as mensagens dos tópicos e gerenciar as requisições de produtores e consumidores. Um \textit{cluster} Kafka pode ter múltiplos brokers trabalhando em conjunto.
+    \item \textbf{Zookeeper}: Sistema auxiliar usado para coordenar e manter informações de configuração e estado do cluster Kafka (embora novas versões do Kafka permitam funcionamento sem ele).
+    \item \textbf{Partitions (Partições)}: Cada tópico pode ser dividido em partições, o que permite distribuir a carga entre diferentes brokers e processar mensagens em paralelo, aumentando a escalabilidade do sistema.
+\end{itemize}
+
+\section{Como funciona}
+O grande diferencial do Kafka em relação a sistemas de mensagens tradicionais é que ele pode armazenar as mensagens por um período de tempo definido, mesmo depois de terem sido consumidas. 
+Isso permite que diversos consumidores leiam as mesmas mensagens em momentos diferentes.
+
+Essa característica torna o Kafka ideal para aplicações como:
+\begin{itemize}
+    \item Monitoramento de sistemas em tempo real;
+    \item Processamento de grandes volumes de dados (logs, métricas, eventos);
+    \item Comunicação entre microsserviços;
+    \item Integração entre bancos de dados e sistemas analíticos.
+\end{itemize}
+
+O fluxo de funcionamento do Kafka pode ser descrito em quatro etapas principais:
+
+\begin{enumerate}
+    \item \textbf{Produção}: Um produtor envia mensagens para um tópico específico.
+    \item \textbf{Armazenamento}: As mensagens são armazenadas em partições dentro do tópico, mantendo a ordem de chegada.
+    \item \textbf{Distribuição}: Consumidores se inscrevem no tópico e consomem mensagens com base em seu próprio marcador de leitura (\textit{offset}).
+    \item \textbf{Processamento contínuo}: As mensagens são processadas em tempo real por consumidores individuais ou por grupos de consumidores.
+\end{enumerate}
+
+\section{Vantagens do uso}
+\begin{itemize}
+    \item Alta taxa de transferência e baixa latência;
+    \item Escalabilidade horizontal por meio de partições e múltiplos brokers;
+    \item Tolerância a falhas com replicação de dados;
+    \item Retenção configurável de mensagens;
+    \item Fácil integração com ferramentas como Apache Flink, Spark, Hadoop e bancos de dados.
+\end{itemize}
+
+\section{Conclusão}
+O Apache Kafka se tornou uma ferramenta essencial para arquiteturas modernas orientadas a eventos e sistemas de processamento de dados em tempo real. 
+Graças à sua robustez e escalabilidade, ele se torna uma solução ideal para empresas ou desenvolvedores que lidam com grandes volumes de dados e precisam garantir comunicação eficiente e confiável entre serviços.
 
 \end{document}
