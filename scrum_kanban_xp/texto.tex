@@ -1,0 +1,178 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+
+\begin{document}
+
+\begin{center}
+    \centering
+
+    {\huge \textbf{Análise, Projeto e Desenvolvimento Ágil}}\\[0.5cm]
+
+    {\Huge \textbf{Questões de Scrum e Kanban}}\\[0.5cm]
+
+    {\large Aluno 01: \textbf{Henrique Maia Cardosa}}\\[0.5cm]
+    {\large Aluno 02: \textbf{João Miguel de Castro Menna}}\\[0.5cm]
+    {\large Aluno 03: \textbf{Ricardo Gabriel Fialho Santos}}\\[2.5cm]
+\end{center}
+
+\pagebreak
+
+\section*{Questões de Scrum}
+
+\paragraph{}
+
+1. R: Um caminho de resolução aderente ao Scrum seria o seguinte: o Scrum Master
+promove uma conversa entre stakeholder, Product Owner e Time de Desenvolvimento para
+esclarecer impacto e riscos. Se a funcionalidade for realmente crítica, o Product Owner pode
+negociar com o Time de Desenvolvimento a possibilidade de cancelar a Sprint e iniciar uma
+nova, com o escopo revisado. Caso contrário, o pedido deve ser registrado no Product
+Backlog para priorização futura. Assim, mantém-se a transparência, a inspeção e a
+adaptação, princípios centrais do controle empírico de processo.
+
+Se o time ceder à pressão e aceitar incluir a funcionalidade sem respeitar o
+processo, podem surgir alguns anti-padrões. O primeiro é a quebra do foco da Sprint, em
+que o time perde previsibilidade e compromete as metas definidas, prejudicando a inspeção
+dos resultados. O segundo é a erosão do Definition of Done, quando, para “dar conta” do
+novo escopo, o time reduz a qualidade técnica ou deixa entregas incompletas,
+comprometendo a confiabilidade do incremento. Esses problemas mostram como ignorar os
+papéis e responsabilidades definidos no Scrum enfraquece o próprio ciclo empírico de
+inspeção e adaptação, levando a decisões baseadas em pressão externa e não em
+evidências.
+
+\paragraph{}
+
+2. R: Num cenário em que um stakeholder exige a inclusão de uma grande funcionalidade em
+uma Sprint já em andamento, é importante analisar os limites de autoridade de cada papel
+no Scrum.
+
+O Product Owner tem autoridade sobre o Product Backlog e, portanto, pode decidir
+sobre as prioridades e negociações com stakeholders. Contudo, ele não pode impor que o
+Time de Desenvolvimento aceite novos itens dentro da Sprint em curso, pois, uma vez
+iniciada, o conteúdo da Sprint só pode ser alterado pelo próprio time em comum acordo.
+O Time de Desenvolvimento, por sua vez, tem autoridade para decidir quanto e como
+o trabalho será realizado, respeitando critérios técnicos e o Definition of Done (DoD); ele não
+pode, entretanto, simplesmente ignorar o valor de negócio trazido pelo pedido.
+
+Já o Scrum Master atua como facilitador do processo, garantindo que o framework
+seja seguido e que não haja quebra de foco ou de transparência; ele não pode tomar
+decisões de negócio nem de ordem técnica, mas pode intervir para lembrar o time e o
+Product Owner dos limites do Scrum.
+
+\paragraph{}
+
+3. R: No caso de planejamento sob incerteza, o time precisa assumir que não vai conseguir
+prever tudo, então o Objetivo da Sprint deve ser claro e mensurável, mas sem depender de
+“entregar tudo”. Um exemplo seria: “Validar a integração inicial com o sistema externo e
+garantir pelo menos um fluxo completo conforme o DoD”. Assim, o valor está na validação e
+no aprendizado, não na quantidade.
+
+Na escolha dos itens do Product Backlog, é importante equilibrar valor, risco e qualidade: dar
+prioridade ao que gera mais impacto, mas também trazer cedo os itens de maior risco
+técnico para reduzir incertezas. O DoD continua sendo a linha de corte, para que só se
+aceite aquilo que pode ser entregue de forma estável. Para fatiar histórias, o time pode
+dividir grandes funcionalidades em fluxos menores de uso, separar o essencial do opcional e
+buscar entregar algo inspecionável logo de início.
+
+Como existe dependência externa, é fundamental ter um plano B: preparar histórias
+alternativas que não dependam dessa integração, de forma que, se houver atraso, o time
+ainda consiga entregar valor. O critério de sucesso da Sprint não deve ser “concluir todos os
+itens”, mas sim alcançar o Objetivo definido — por exemplo, permitir que stakeholders
+testem pelo menos um fluxo crítico, funcionando de ponta a ponta e de acordo com o DoD.
+Isso mantém a transparência, dá condições para inspeção e abre espaço para adaptação na
+Sprint seguinte.
+
+\paragraph{}
+
+4. R: O Definition of Done (DoD) é um acordo do time que define o que significa uma entrega
+estar realmente concluída, valendo para todas as histórias e garantindo qualidade
+padronizada; já os critérios de aceitação são específicos de cada item do backlog e
+descrevem o comportamento esperado para validar se a funcionalidade atende ao que foi
+pedido. No nível de produto, o DoD assegura consistência da solução como um todo,
+enquanto no nível de time ele orienta práticas técnicas, testes e revisões.
+Para a história “Login básico com e-mail e senha”, um DoD mínimo poderia incluir: código
+revisado e versionado, testes automatizados passando, cobertura mínima definida,
+documentação atualizada, integração contínua sem falhas, usabilidade básica validada e
+ausência de vulnerabilidades conhecidas. Já três critérios de aceitação testáveis seriam:
+Dado um usuário cadastrado, quando insere e-mail e senha corretos, então o acesso é
+concedido.
+
+Dado um usuário cadastrado, quando insere senha incorreta, então o sistema exibe
+mensagem de erro sem revelar detalhes sensíveis.
+Dado um usuário não registrado, quando tenta acessar, então o sistema bloqueia a entrada
+e sugere cadastro.
+
+Mesmo que os critérios de aceitação estejam incompletos ou mal escritos, o DoD funciona
+como rede de proteção, pois exige padrões técnicos (como testes, segurança,
+documentação e revisão), impedindo que o incremento seja liberado sem qualidade mínima
+e mantendo a confiabilidade do produto.
+
+\paragraph{}
+
+5. R: Um time que faz Dailies longas e sem foco, Review com incremento incompleto e Retro
+irregular provavelmente sofre de três causas-raiz: falta de clareza de objetivo da Sprint,
+ausência de disciplina no cumprimento do DoD e baixo comprometimento com as
+cerimônias. O experimento para as próximas duas Sprints pode ser: limitar a Daily a 15
+minutos com pauta fixa, reforçar na Planning e na Review que apenas incrementos prontos
+(segundo o DoD) serão mostrados, e tornar a Retro obrigatória com tempo reservado no
+calendário. As métricas a acompanhar seriam: cumprimento do Objetivo da Sprint,
+percentual de histórias que atendem ao DoD, defeitos encontrados após a Sprint e tempo
+médio de aprovação de PRs. A regra de decisão seria: se houver melhora consistente em
+pelo menos dois indicadores-chave (por exemplo, mais histórias entregues dentro do DoD e
+incremento estável na Review), manter a mudança; caso contrário, reavaliar e ajustar o
+processo
+
+\pagebreak
+
+\section*{Questões de Kanban}
+
+\paragraph{}
+
+1. R: Os princípios formam um ciclo: tornar o fluxo visível expõe gargalos; limites de
+WIP reduzem paralelismo e filas; gerenciar o fluxo com métricas permite ajustes; políticas
+explícitas orientam a movimentação dos itens; cadências de feedback consolidam melhorias.
+Exemplo: ao limitar WIP em “Em Progresso” de 8 para 4, o time reduz multitarefa, conclui
+itens mais rápido e o lead time mediano cai (menos espera).
+
+\paragraph{}
+
+2. R: Pela Lei de Little: Lead time ~= WIP Throughput = 30 12 ~= 2,5 semanas/ item.
+Estratégias:
+(1) Reduzir WIP (limites mais baixos por coluna e política de “finalizar antes
+de começar”);
+(2) Aumentar throughput de qualidade removendo gargalos (ex.: pair em
+Estágios críticos, automação de testes, reduzir handoffs)
+
+\paragraph{}
+
+3. R: O alargamento em Review/Test indica gargalo.
+
+Ações:
+\begin{itemize}
+    \item Operacionais: realocar pessoas, automatizar testes.
+    \item Políticas: limitar WIP nessa coluna, definir critérios de entrada claros e priorizar conclusão de bloqueados antes de iniciar novos.
+\end{itemize}
+
+\paragraph{}
+
+4. R: Comunicação: “50\% das entregas levam até 6 dias (P50) e 85\% até 10 dias (P85).”
+\begin{itemize}
+    \item Para stakeholders: usar P85 como prazo seguro.
+    \item Internamente: usar P50 para planejar capacidade.
+    \item Itens críticos: aplicar buffers ou classes de serviço especiais.
+\end{itemize}
+
+5. R: Política: puxar primeiro bloqueados/antigos (aging alto); depois Fixed Date próximos;
+reservar lane/WIP específico para Expedite (uso raro e criterioso).
+
+Riscos do abuso de Expedite: desorganiza fluxo, aumenta variabilidade e lead time dos
+demais.
+
+Mitigação: quota limitada, aprovação formal e revisão periódica do uso.
+
+\end{document}
+
