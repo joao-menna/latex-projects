@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+
+\begin{document}
+
+\begin{center}
+    \centering
+
+    {\huge \textbf{Análise, Projeto e Desenvolvimento Ágil}}\\[0.5cm]
+
+    {\Huge \textbf{Questões de Extreme Programming}}\\[0.5cm]
+
+    {\large Aluno 01: \textbf{Henrique Maia Cardosa}}\\[0.5cm]
+    {\large Aluno 02: \textbf{João Miguel de Castro Menna}}\\[0.5cm]
+    {\large Aluno 03: \textbf{Ricardo Gabriel Fialho Santos}}\\[2.5cm]
+\end{center}
+
+
+\pagebreak
+
+\section*{Questões sobre Extreme Programming (XP)}
+
+\paragraph{}
+
+1. Valores do XP e consequências práticas Explique como Comunicação,
+Simplicidade, Feedback, Coragem e Respeito se traduzem em decisões do dia a dia
+(ex.: revisão de código, padrão de código, spikes). Dê um exemplo de trade-off onde
+“Simplicidade” e “Coragem” evitam over engineering.
+
+R: Os valores do XP orientam o trabalho diário. Comunicação mantém o time alinhado,
+simplicidade evita complicações, feedback permite ajustes rápidos, coragem incentiva
+mudanças necessárias e respeito sustenta o trabalho em equipe. Simplicidade e coragem
+juntos evitam overengineering ao focar apenas no essencial.
+
+\paragraph{}
+
+2. TDD — especificação executável Descreva o ciclo Red → Green → Refactor e
+explique por que TDD melhora design e testabilidade. Cite dois anti-padrões comuns
+e como evitá-los.
+
+R: O TDD segue o ciclo Red, Green e Refactor: cria o teste que falha, faz o código passar e
+melhora o design. Isso gera código limpo e testável. Anti-padrões comuns são testes frágeis
+e irrelevantes; evitam-se testando comportamento, não implementação.
+
+\paragraph{}
+
+3. Pair Programming — qualidade e fluxo Quando pair programming traz melhor
+custo-benefício? Defina papéis Driver/Navigator, proponha um protocolo de sessão
+(tempo, rotatividade, micro-retros) e aponte dois riscos e respectivas mitigações.
+
+R: Pair programming é útil em partes críticas e onboarding. O driver codifica e o navigator
+orienta. Sessões curtas com trocas frequentes e pausas evitam fadiga e diferenças de
+ritmo.
+
+\paragraph{}
+
+4. CI e releases pequenos — o “cadence técnico” do XP Esboce um pipeline de CI
+mínimo (estágios e gates) alinhado ao XP e defina métricas para detectar regressão
+de qualidade sem desacelerar o time. Como small releases reduzem risco?
+
+R: O pipeline de CI deve incluir build, testes, lint e deploy. Métricas como tempo de build e
+falhas mostram regressões. Releases pequenas reduzem risco e facilitam correções
+rápidas.
+
+\paragraph{}
+
+5. Refactoring, DoD técnico e YAGNI (decidir hoje vs. amanhã)
+Diferencie refactoring de reescrita; proponha um DoD técnico mínimo para XP (testes,
+CI, padrões, observabilidade) e explique quando invocar YAGNI sem comprometer
+qualidades como segurança ou operabilidade.
+
+R: Refactoring melhora o design sem mudar o comportamento, diferente da reescrita. O DoD
+inclui testes, CI verde e padrões seguidos. O YAGNI evita implementar o que não é preciso
+sem comprometer segurança ou estabilidade
+
+\end{document}
