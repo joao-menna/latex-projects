@@ -1,0 +1,213 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{listings}
+
+\geometry{margin=2.5cm}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    showstringspaces=false
+}
+
+\begin{document}
+
+\begin{center}
+    \centering
+
+    {\huge \textbf{Análise, Projeto e Desenvolvimento Ágil}}\\[0.5cm]
+
+    {\Huge \textbf{Documento Instrucional para RH}}\\[0.5cm]
+
+    {\large Aluno: \textbf{João Miguel de Castro Menna}}\\[0.5cm]
+\end{center}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\section{Resumo Executivo}
+
+\paragraph{}
+
+Este documento foi elaborado para auxiliar o setor de RH na triagem, entrevistas e onboarding de novos(as) desenvolvedores(as), mesmo sem conhecimento prévio em metodologias ágeis.
+
+A empresa adota simultaneamente três abordagens: \textbf{Scrum}, \textbf{Kanban} e \textbf{Extreme Programming (XP)}. Cada uma é aplicada de forma integrada, garantindo previsibilidade, fluxo contínuo e qualidade técnica sustentada por testes e refatoração.
+
+O documento também descreve o perfil esperado, o processo de seleção e exemplos práticos que podem ser utilizados em entrevistas ou treinamentos.
+
+\section{Descrição da Vaga e Pré-Requisitos}
+
+\textbf{Título:} Desenvolvedor(a) de Software Ágil - Pleno/Sênior
+
+\subsection*{Pré-requisitos obrigatórios}
+\begin{itemize}[noitemsep]
+    \item Experiência prática com \textbf{Scrum, Kanban e XP/TDD}.
+    \item Participação em equipes ágeis, entregando incrementos de software de forma iterativa e contínua.
+\end{itemize}
+
+\subsection*{Hard Skills}
+\begin{itemize}[noitemsep]
+    \item Testes automatizados (unitários, integração, end-to-end);
+    \item Versionamento Git (fluxos com \textit{feature branches});
+    \item Integração Contínua (CI) e entrega contínua (CD);
+    \item Refatoração e revisão de código.
+\end{itemize}
+
+\subsection*{Soft Skills}
+\begin{itemize}[noitemsep]
+    \item Colaboração e trabalho em equipe;
+    \item Comunicação clara e empática;
+    \item Feedbacks curtos e construtivos;
+    \item Foco em qualidade e melhoria contínua.
+\end{itemize}
+
+\section{Como Trabalhamos com Scrum}
+
+\subsection*{Papéis}
+\begin{itemize}[noitemsep]
+    \item \textbf{Product Owner (PO):} Prioriza o backlog e garante alinhamento com o valor de negócio.
+    \item \textbf{Scrum Master (SM):} Remove impedimentos e assegura a aplicação correta do processo.
+    \item \textbf{Dev Team:} Entrega um incremento potencialmente liberável a cada Sprint.
+\end{itemize}
+
+\subsection*{Eventos (Time-box de referência)}
+\begin{itemize}[noitemsep]
+    \item \textbf{Sprint Planning (até 4h / 2 semanas):} Definição da meta da Sprint e seleção dos itens priorizados.
+    \item \textbf{Daily (15 min):} Sincronização do time, verificação do quadro Kanban e identificação de impedimentos.
+    \item \textbf{Review (até 2h):} Apresentação do incremento aos stakeholders.
+    \item \textbf{Retrospective (até 1,5h):} Reflexão sobre o processo e definição de 1–2 ações de melhoria.
+\end{itemize}
+
+\subsection*{Artefatos e Definições}
+\begin{itemize}[noitemsep]
+    \item \textbf{Product Backlog} e \textbf{Sprint Backlog} com \textit{Definition of Ready} (DoR) e \textit{Definition of Done} (DoD);
+    \item \textbf{Incremento} testado, integrado e potencialmente liberável.
+\end{itemize}
+
+\section{Nosso Kanban Integrado ao Scrum}
+
+O Kanban é utilizado para visualizar e gerenciar o fluxo de trabalho dentro da Sprint.
+
+\subsection*{Exemplo de Quadro Kanban}
+\begin{center}
+Backlog → Ready → In Progress (WIP 3) → Code Review (WIP 2) → Test (WIP 2) → Done
+\end{center}
+
+\subsection*{Políticas Explícitas}
+\begin{itemize}[noitemsep]
+    \item Cada coluna possui critérios de entrada e saída claros;
+    \item Itens bloqueados são sinalizados com etiqueta “Blocked” e motivo;
+    \item Pull só é permitido quando a coluna atual está abaixo do limite de WIP;
+    \item Itens urgentes seguem a classe especial “Expedite” (WIP dedicado).
+\end{itemize}
+
+\subsection*{Métricas}
+\begin{itemize}[noitemsep]
+    \item \textbf{Lead Time:} tempo total do item até a entrega;
+    \item \textbf{Throughput:} quantidade média de entregas semanais.
+\end{itemize}
+
+\section{XP e TDD na Prática}
+
+O time adota práticas de \textbf{Extreme Programming (XP)} para garantir qualidade e sustentabilidade do código.
+
+\subsection*{Ciclo TDD (Red–Green–Refactor)}
+\begin{enumerate}
+    \item \textbf{Red:} escrever um teste que falha.
+    \item \textbf{Green:} implementar o código mínimo para o teste passar.
+    \item \textbf{Refactor:} melhorar o código mantendo todos os testes verdes.
+\end{enumerate}
+
+\subsection*{Práticas Complementares}
+\begin{itemize}[noitemsep]
+    \item \textbf{Pair Programming} (ou mob em casos críticos);
+    \item \textbf{Code Review} leve e colaborativo;
+    \item \textbf{Integração Contínua (CI)} a cada \textit{push};
+    \item \textbf{Feature Flags} para entregas graduais;
+    \item \textbf{Commits pequenos} e \textbf{refatoração contínua}.
+\end{itemize}
+
+\section{Roteiro de Seleção para RH}
+
+\subsection*{Triagem de Currículo}
+Verificar menções a:
+\begin{itemize}[noitemsep]
+    \item TDD, testes automatizados e refatoração;
+    \item Experiência com Scrum e/ou Kanban;
+    \item Práticas de CI/CD.
+\end{itemize}
+
+\subsection*{Perguntas para Entrevista (linguagem simples)}
+\begin{itemize}[noitemsep]
+    \item “Explique, em linguagem simples, o que é TDD e por que usamos.”
+    \item “O que significa limite de WIP e por que ele ajuda?”
+    \item “Como você participa de uma Daily produtiva?”
+\end{itemize}
+
+\subsection*{Critérios de Avaliação Técnica}
+\begin{itemize}[noitemsep]
+    \item Mini-desafio técnico com TDD;
+    \item Leitura e explicação de um trecho de código real;
+    \item Simulação de uma revisão de código (code review);
+    \item Discussão de caso sobre priorização de backlog.
+\end{itemize}
+
+\section{Exemplos Práticos}
+
+\subsection*{User Story (Scrum)}
+\textbf{Como} usuário autenticado,  
+\textbf{quero} redefinir minha senha via link seguro,  
+\textbf{para} poder recuperar o acesso rapidamente.  
+
+\textbf{Critérios de Aceite:}
+\begin{itemize}[noitemsep]
+    \item O link de redefinição expira em 30 minutos;
+    \item O usuário recebe um e-mail com o link seguro;
+    \item Após redefinir, o token é invalidado.
+\end{itemize}
+
+\subsection*{Quadro Kanban (resumo visual)}
+\begin{center}
+\texttt{Backlog → Ready → In Progress (WIP 3) → Code Review (WIP 2) → Test (WIP 2) → Done}
+\end{center}
+
+\subsection*{Mini Ciclo TDD (Pseudo-código)}
+\begin{lstlisting}[language=Python]
+# Red
+assert(reset_link.expires_in_minutes == 30)  # deve falhar inicialmente
+
+# Green
+reset_link.set_expiration(30)  # torna o teste verde
+
+# Refactor
+DEFAULT_RESET_EXPIRATION = 30
+# extrair funcao, remover duplicacoes, manter testes passando
+\end{lstlisting}
+
+\section{Anexos e Diagramas (opcional)}
+\begin{itemize}[noitemsep]
+    \item Fluxo resumido: Backlog → Sprint → Kanban → Entrega → Feedback.
+    \item Diagrama simples de papéis (PO, SM, Dev Team).
+    \item Exemplo de métricas (gráfico de Lead Time e Throughput).
+\end{itemize}
+
+\vfill
+\begin{center}
+\textit{“A cultura ágil é construída todos os dias — começando pela forma como contratamos e integramos pessoas.”}
+\end{center}
+
+\end{document}
