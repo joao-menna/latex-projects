@@ -84,7 +84,7 @@ O documento também descreve o perfil esperado, o processo de seleção e exempl
     \item \textbf{Dev Team:} Entrega um incremento potencialmente liberável a cada Sprint.
 \end{itemize}
 
-\subsection*{Eventos (Time-box de referência)}
+\subsection*{Eventos}
 \begin{itemize}[noitemsep]
     \item \textbf{Sprint Planning (até 4h / 2 semanas):} Definição da meta da Sprint e seleção dos itens priorizados.
     \item \textbf{Daily (15 min):} Sincronização do time, verificação do quadro Kanban e identificação de impedimentos.
@@ -125,7 +125,7 @@ Backlog → Ready → In Progress (WIP 3) → Code Review (WIP 2) → Test (WIP 
 
 O time adota práticas de \textbf{Extreme Programming (XP)} para garantir qualidade e sustentabilidade do código.
 
-\subsection*{Ciclo TDD (Red–Green–Refactor)}
+\subsection*{Ciclo TDD (Red-Green-Refactor)}
 \begin{enumerate}
     \item \textbf{Red:} escrever um teste que falha.
     \item \textbf{Green:} implementar o código mínimo para o teste passar.
@@ -185,10 +185,10 @@ Verificar menções a:
 \texttt{Backlog → Ready → In Progress (WIP 3) → Code Review (WIP 2) → Test (WIP 2) → Done}
 \end{center}
 
-\subsection*{Mini Ciclo TDD (Pseudo-código)}
+\subsection*{Mini Ciclo TDD (Python)}
 \begin{lstlisting}[language=Python]
 # Red
-assert(reset_link.expires_in_minutes == 30)  # deve falhar inicialmente
+assert reset_link.expires_in_minutes == 30  # deve falhar inicialmente
 
 # Green
 reset_link.set_expiration(30)  # torna o teste verde
@@ -197,17 +197,5 @@ reset_link.set_expiration(30)  # torna o teste verde
 DEFAULT_RESET_EXPIRATION = 30
 # extrair funcao, remover duplicacoes, manter testes passando
 \end{lstlisting}
-
-\section{Anexos e Diagramas (opcional)}
-\begin{itemize}[noitemsep]
-    \item Fluxo resumido: Backlog → Sprint → Kanban → Entrega → Feedback.
-    \item Diagrama simples de papéis (PO, SM, Dev Team).
-    \item Exemplo de métricas (gráfico de Lead Time e Throughput).
-\end{itemize}
-
-\vfill
-\begin{center}
-\textit{“A cultura ágil é construída todos os dias — começando pela forma como contratamos e integramos pessoas.”}
-\end{center}
 
 \end{document}
