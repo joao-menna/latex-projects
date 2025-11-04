@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{listings}
+
+\geometry{margin=2.5cm}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    showstringspaces=false
+}
+
+\begin{document}
+
+\begin{center}
+    \centering
+
+    {\huge \textbf{Análise, Projeto e Desenvolvimento Ágil}}\\[0.5cm]
+
+    {\Huge \textbf{Glossário Downstream}}\\[0.5cm]
+
+    {\large Aluno 1: \textbf{Henrique Maia Cardosa}}\\[0.5cm]
+    {\large Aluno 2: \textbf{João Miguel de Castro Menna}}\\[0.5cm]
+    {\large Aluno 3: \textbf{João Pedro Izidoro}}\\[0.5cm]
+    {\large Aluno 4: \textbf{Ricardo Gabriel Fialho Santos}}\\[0.5cm]
+\end{center}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\section*{Glossário}
+
+\paragraph{}
+\textbf{Cobertura de Testes:} É uma métrica utilizada na Engenharia de Software que avalia a eficácia dos testes realizados no código fonte. Ela mede em porcentagem a quantidade de código testado, assim é possível verificar o quão bem os testes estão se saindo.
+
+\paragraph{}
+\textbf{SAST (Static Application Security Testing):} O Teste de segurança de aplicação estática é um teste que verifica os padrões de  vulnerabilidades de segurança no código.
+
+\paragraph{}
+\textbf{Quality gates:} É a barreira de métricas necessárias para passar o código para frente.
+
+\paragraph{}
+\textbf{CI (Integração Contínua):} Integrar o código novo a todo momento na aplicação.
+
+\paragraph{}
+\textbf{CD (Entrega/Implantação Contínua):} Entregar o código para o cliente pronto para execução a cada certo período de tempo ou commit.
+
+\paragraph{}
+\textbf{Política de versionamento:} É um conjunto de regras estratégicas que visam gerenciar as mudanças de versão de uma aplicação, documento, código, ao longo do tempo.
+
+\paragraph{}
+\textbf{Dockerfile (práticas mínimas):} Arquivo que contém a especificação do contêiner para ser executado, pode possuir build de múltiplos estágios, variáveis de ambiente, ENTRYPOINT para aplicações CLI, CMD para aplicações que rodam apenas uma vez, por aí vai. É necessário adicionar o conteúdo ao container usando COPY.
+
+\paragraph{}
+\textbf{Docker-compose:} Aplicativo para a orquestração de containers Docker. Ele pode determinar quem subir primeiro, quem executa depois, com qual comando, com qual health check, etc.
+
+\paragraph{}
+\textbf{Estratégias de release:} blue-green, canário (canary), feature flags: São técnicas utilizadas no desenvolvimento de software e práticas de DevOps para minimizar riscos, reduzir o tempo de inatividade (downtime) e controlar a exposição de novas funcionalidades aos usuários.
+
+\paragraph{}
+\textbf{Plano de rollback / rollback:} É o processo de reverter um sistema, aplicação ou banco de dados para um estado anterior e funcional.
+
+\paragraph{}
+\textbf{Observabilidade:} Capacidade de entender o estado interno de um sistema a partir de suas saídas externas, como logs, métricas e traces.
+
+\paragraph{}
+\textbf{Logs estruturados:} Registros de eventos que seguem um formato predefinido e organizado, como JSON, diferentemente dos logs de texto simples
+
+\paragraph{}
+\textbf{Métricas (ex.: erros/min, tempo de resposta, uso de recursos):} São medidas quantitativas para monitorar, avaliar o desempenho de um sistema ou aplicação.
+
+\paragraph{}
+\textbf{Rastros/traços (tracing):} É acompanhar o decorrer de um projeto, desde observar, visualizar, localizar e depurar.
+
+\paragraph{}
+\textbf{Indicadores DORA (lead time, frequência de deploy, MTTR, taxa de falha):} São um conjunto de métricas-chave que avaliam o desempenho de equipes de desenvolvimento de software em práticas DevOps, visando a melhoria da eficiência e estabilidade. Frequência de implantação, tempo de lead para mudanças, taxa de falha e tempo médio de recuperação são as métricas.
+
+\paragraph{}
+\textbf{Runbook:} É um guia prático e detalhado com instruções passo a passo para executar tarefas operacionais, responder a incidentes ou manter sistemas. Serve como um manual de procedimentos, documentando o que fazer, como fazer e a ordem - para garantir que qualquer pessoa consiga executar o procedimento de forma consistente e segura.
+
+\paragraph{}
+\textbf{Post-mortem:} Prática que habilita a cultura do aprendizado com a falha e o blameless (sem culpa). O objetivo é entender o que aconteceu, identificar causas-raiz e aprender com a experiência.
+
+\paragraph{}
+\textbf{Governança da qualidade:} É a gestão da qualidade, que envolve diretrizes, transparência e conformidade nos processos, no contexto da engenharia de software isso se aplica a um projeto de uma aplicação.
+
+\paragraph{}
+\textbf{E2E (End-to-End):} Prática de testar a aplicação de ponta a ponta, passando por todas as partes do sistema.
+
+\end{document}
+
